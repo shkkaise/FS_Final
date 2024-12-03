@@ -2,10 +2,7 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div className='app'>
-        <navbar/>
-        
-    </div>
+    <div>App</div>
   )
 }
 

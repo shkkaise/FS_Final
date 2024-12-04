@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ9QVB8R6B"></script>
+     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CQ9QVB8R6B');
+    </script>
+    <title>FashionSpice | Site Launching Soon</title>
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2f4f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 56px;
+            color: #070000;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 32px;
+            color: #d90404;
+            margin-bottom: 40px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .countdown div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+        .countdown div span {
+            font-size: 48px;
+            color: #333;
+        }
+
+        .countdown div small {
+            font-size: 14px;
+            color: #110f0f;
+        }
+
+        .quote {
+            font-size: 22px;
+            color: #000;
+            margin-top: 20px;
+            display: none;
+            position: fixed;
+            max-width: 80%;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+   
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 divtitle2 oh">
+                <h1>FASHION SPICE</h1>
+                <img class="title-image izo" src="images/FSPICE1.webp" alt="FSPICE1_Image1">
+            </div>
+            <div class="col-lg-4 divtitle">
+            <div class="countdown">
+            <div>
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div>
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+            <div>
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+                <div class="quote"></div>
+            </div>
+                
+
+        <!-- </div> -->
+        <!-- <div class="quote"></div> -->
+    <!-- </div> -->
+    <script>
+        // Set the launch date and time
+        var launchDate = new Date("2024-12-30T21:00:00Z");
+
+        // Update the countdown every 1 second
+        var countdownInterval = setInterval(function() {
+            // Get current date and time
+            var now = new Date().getTime();
+
+            // Calculate the time remaining
+            var timeRemaining = launchDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("days").textContent = days.toString().padStart(2, "0");
+            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+            // If the countdown is finished, display a message
+            if (timeRemaining < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+                document.getElementById("countdown").textContent = "Launching Now!";
+            }
+        }, 1000);
+
+        // Array of quotes
+        var quotes = [
+            "Step into style with the latest trends at Fashion Spice!",
+            "Where fashion meets affordability – Fashion Spice is here!",
+            "Discover your new look at our trendy garment haven!",
+            "Outfit goals? Achieved at Fashion Spice!",
+            "Ready to wear, ready to slay – only at Fashion Spice!",
+            "Your wardrobe’s best friend – now open at Fashion Spice!",
+            "Step up your style game with Fashion Spice's latest arrivals!",
+            "Trendy, comfy, and oh-so-chic – explore the best at Fashion Spice!",
+            "Fashion-forward and budget-friendly – that's Fashion Spice!",
+            "Find your perfect fit with our trendsetting collection!",
+            "Stay ahead of the curve – shop the latest at Fashion Spice!",
+            "Fashion Spice – where every outfit is a statement!",
+            "New trends, bold styles – Fashion Spice has it all!",
+            "Look great, feel great – visit Fashion Spice today!",
+            "Unleash your inner fashionista with our exclusive collections!",
+            "Because your style deserves the best – only at Fashion Spice!",
+            "Fresh styles, fresh looks – all at Fashion Spice!",
+            "Dressing up made easy with Fashion Spice’s readymade collection!",
+            "Fashion Spice – your destination for everyday elegance!",
+            "Elevate your wardrobe instantly at Fashion Spice!",
+        ];
+
+
+function displayRandomQuote() {
+    var randomIndex = Math.floor(Math.random() * quotes.length);
+    var quoteElement = document.querySelector(".quote");
+    
+    // Apply text styles
+    quoteElement.textContent = quotes[randomIndex];
+    quoteElement.style.display = "block";
+    quoteElement.style.position = "absolute";  // Ensure it's positioned relative to the screen
+    
+    // Text Styling
+    quoteElement.style.color = "#ff5733"; // Set text color
+    quoteElement.style.fontSize = "28px"; // Set font size
+    quoteElement.style.fontFamily = "'Arial', sans-serif"; // Set font family
+    quoteElement.style.fontWeight = "bold"; // Set font weight
+    quoteElement.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.3)"; // Add text shadow
+    quoteElement.style.backgroundColor = "#e2f4f3"
+    //quoteElement.style.backgroundColor = "rgba(255, 255, 255, 0.94)"; // Add background with transparency
+    quoteElement.style.padding = "10px"; // Add padding
+    quoteElement.style.borderRadius = "5px"; // Add rounded corners
+    quoteElement.style.borderColor = "#000"; // Add rounded corners
+    
+    // Randomize position on the screen
+    quoteElement.style.left = Math.floor(Math.random() * (window.innerWidth - quoteElement.clientWidth)) + "px";
+    quoteElement.style.top = Math.floor(Math.random() * (window.innerHeight - quoteElement.clientHeight)) + "px";
+    
+    // Hide the quote after 3 seconds
+    setTimeout(function() {
+        quoteElement.style.display = "none";
+    }, 3000);
+}
+
+
+//### Key changes:
+//    1. ** Font and Color:** Styled the text with font size, color, and font weight.
+//2. ** Text Shadow:** Added a shadow for a more stylish appearance.
+//3. ** Background & Padding:** Set a background color with some transparency, and added padding to create a neat box around the text.
+//4. ** Rounded Corners:** Used`border-radius` to give the quote box a softer look.
+
+//You can further customize these styles based on the look you want.
+
+
+        // Select a random quote and display it
+//        function displayRandomQuote() {
+//            var randomIndex = Math.floor(Math.random() * quotes.length);
+//            var quoteElement = document.querySelector(".quote");
+//           quoteElement.textContent = quotes[randomIndex];
+//            quoteElement.style.display = "block";
+//            quoteElement.style.left = Math.floor(Math.random() * (window.innerWidth - quoteElement.clientWidth)) + "px";
+//            quoteElement.style.top = Math.floor(Math.random() * (window.innerHeight - quoteElement.clientHeight)) + "px";
+//            setTimeout(function() {
+//                quoteElement.style.display = "none";
+//            }, 3000);
+//        }
+
+        // Call the displayRandomQuote function initially and every 5 seconds
+        displayRandomQuote();
+        setInterval(displayRandomQuote, 5000);
+    </script>
+</body>
+</html>
